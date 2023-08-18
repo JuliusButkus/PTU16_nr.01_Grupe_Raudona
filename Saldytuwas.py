@@ -14,7 +14,9 @@ while True:
     if tekstas == '0':
         break
     elif tekstas == '1':
-        pass
+        produktas = input("Pridekite produkta: ")
+        produkto_kiekis = input("Pridekite produkto kieki: ")
+        saldytuvas[produktas] = produkto_kiekis
     elif tekstas == '2':
         pass
     elif tekstas == '3':
