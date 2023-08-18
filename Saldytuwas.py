@@ -20,6 +20,8 @@ while True:
     elif tekstas == '3':
         pass
     elif tekstas == '4':
-        pass
+        produktu_perziura = saldytuvas.items()
+        print(f'"Šaldytuve yra šių produktų: {saldytuvas}"')
+        print(f'Kūnas šaukia, trūksta Vita-mi-NŲŲ!')
     elif tekstas == '5':
         pass
