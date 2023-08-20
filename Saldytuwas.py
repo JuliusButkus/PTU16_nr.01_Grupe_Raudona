@@ -11,6 +11,7 @@ saldytuvas = {}
 
 while True:
     tekstas = input('Pasirinkite operacija: ')
+    
     if tekstas == '0':
         break
     elif tekstas == '1':
@@ -18,7 +19,15 @@ while True:
     elif tekstas == '2':
         pass
     elif tekstas == '3':
-        pass
+        produktas = input("Iveskite koki produkta norite pasalinti: ")
+        kiekis = int(input('Iveskite koki kieki produkto norite pasalinti: '))
+        
+        if produktas in saldytuvas:
+            saldytuvas[produktas] -= kiekis
+            if saldytuvas[produktas] <= 0:
+                print(f'Nepakankamas {produktas} kiekis')
+            else:
+                print(f'{produktas} saldytuve yra: {saldytuvas[produktas]}')
     elif tekstas == '4':
         pass
     elif tekstas == '5':
