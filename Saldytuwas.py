@@ -16,7 +16,7 @@ while True:
     elif tekstas == '1':
         pass
     elif tekstas == '2':
-        pass
+        saldytuvas = {str(input("įveskite produktą")): input("Įveskite kiekį") }
     elif tekstas == '3':
         pass
     elif tekstas == '4':
