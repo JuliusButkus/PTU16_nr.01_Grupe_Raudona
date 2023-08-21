@@ -39,9 +39,8 @@ while True:
         print(f'"Šaldytuve yra šių produktų: {saldytuvas}"')
         print(f'Kūnas šaukia, trūksta Vita-mi-NŲŲ!')
     elif tekstas == '5':
-        paieska = input("Įveskite norimo rasti produkto pavadinima: ")
-        while paieska in saldytuvas:
-            print(paieska)
-            break
+        paieska = input("Įveskite norima rasti produkta: ")
+        if paieska in saldytuvas:
+            print[paieska]
         else: 
             print(" Tokio produkto šaldytuve nėra ")
