@@ -19,8 +19,11 @@ while True:
         produkto_kiekis = input("Pridekite produkto kieki: ")
         saldytuvas[produktas] = produkto_kiekis
     elif tekstas == '2':
-        produktas = input("pasirinkite produktą")
-        saldytuvas[produktas] =  input("Įveskite kiekį")
+        keisti_produkta = input("pasirinkite produkta: ")
+        prideti_kieki = int(input("pasirinkite kieki: "))
+        if keisti_produkta in saldytuvas:
+            saldytuvas[produktas] += prideti_kieki
+            print(f'{saldytuvas[keisti_produkta]}')
     elif tekstas == '3':
         produktas = input("Iveskite koki produkta norite pasalinti: ")
         kiekis = int(input('Iveskite koki kieki produkto norite pasalinti: '))
