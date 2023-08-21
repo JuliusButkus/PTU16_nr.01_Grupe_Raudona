@@ -19,6 +19,7 @@ while True:
         produkto_kiekis = input("Pridekite produkto kieki: ")
         saldytuvas[produktas] = produkto_kiekis
     elif tekstas == '2':
+
         pass
     elif tekstas == '3':
         produktas = input("Iveskite koki produkta norite pasalinti: ")
