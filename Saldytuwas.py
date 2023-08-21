@@ -1,5 +1,5 @@
 #ŠALDYTUVAS
-'''
+meniukas = '''
 1 - pridėti naują produktą
 2 - papildyti produkto kiekį
 3 - ištraukti produktą nurodant kiekį
@@ -10,13 +10,14 @@
 saldytuvas = {}
 
 while True:
+    print(meniukas)
     tekstas = input('Pasirinkite operacija: ')
     
     if tekstas == '0':
         break
     elif tekstas == '1':
         produktas = input("Pridekite produkta: ")
-        produkto_kiekis = input("Pridekite produkto kieki: ")
+        produkto_kiekis = int(input("Pridekite produkto kieki: "))
         saldytuvas[produktas] = produkto_kiekis
     elif tekstas == '2':
         keisti_produkta = input("pasirinkite produkta: ")
@@ -41,6 +42,6 @@ while True:
     elif tekstas == '5':
         paieska = input("Įveskite norima rasti produkta: ")
         if paieska in saldytuvas:
-            print[paieska]
-        else: 
+            print(paieska, saldytuvas[paieska])
+        else:
             print(" Tokio produkto šaldytuve nėra ")
