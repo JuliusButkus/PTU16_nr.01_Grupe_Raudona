@@ -9,8 +9,11 @@ meniukas = '''
 '''
 saldytuvas = {}
 
-def funkcija_01():
-    pass
+def prideti_produkta(saldytuvas):
+    pavadinimas = input("Iveskite produkto pavadinima: ")
+    kiekis = float(input("Iveskite produkto kieki: "))
+    saldytuvas[pavadinimas] += kiekis
+    print(saldytuvas)
 
 def funkcija_02():
     pass
@@ -34,9 +37,7 @@ while True:
     if tekstas == '0':
         break
     elif tekstas == '1':
-        produktas = input("Pridekite produkta: ")
-        produkto_kiekis = int(input("Pridekite produkto kieki: "))
-        saldytuvas[produktas] = produkto_kiekis
+        print(prideti_produkta(saldytuvas))
     elif tekstas == '2':
         keisti_produkta = input("pasirinkite produkta: ")
         prideti_kieki = int(input("pasirinkite kieki: "))
