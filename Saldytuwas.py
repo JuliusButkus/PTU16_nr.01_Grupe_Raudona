@@ -12,11 +12,15 @@ saldytuvas = {}
 def prideti_produkta(saldytuvas):
     pavadinimas = input("Iveskite produkto pavadinima: ")
     kiekis = float(input("Iveskite produkto kieki: "))
-    saldytuvas[pavadinimas] += kiekis
-    print(saldytuvas)
+    saldytuvas[pavadinimas] = kiekis
+    print(f"{saldytuvas[pavadinimas]}")
 
-def funkcija_02():
-    pass
+def produkto_papildymas(saldytuvas):
+    pavadinimas = input("pasirinkite produkta: ")
+    prideti_kieki = float(input("pasirinkite kieki: "))
+    if pavadinimas in saldytuvas:
+        saldytuvas[pavadinimas] += prideti_kieki
+        print(f'{saldytuvas[pavadinimas]}')
 
 def produkto_isemimas(saldytuvas):
     produktas = input("Iveskite koki produkta norite pasalinti: ")
@@ -51,11 +55,7 @@ while True:
     elif tekstas == '1':
         print(prideti_produkta(saldytuvas))
     elif tekstas == '2':
-        keisti_produkta = input("pasirinkite produkta: ")
-        prideti_kieki = int(input("pasirinkite kieki: "))
-        if keisti_produkta in saldytuvas:
-            saldytuvas[produktas] += prideti_kieki
-            print(f'{saldytuvas[keisti_produkta]}')
+        print(produkto_papildymas(saldytuvas))
     elif tekstas == '3':        
         produkto_isemimas(saldytuvas)
     elif tekstas == '4':
