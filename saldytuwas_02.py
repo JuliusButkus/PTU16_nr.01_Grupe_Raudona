@@ -1,3 +1,4 @@
+#Funkcinis Šaldytuvas
 '''
 Parašykite programą šaldytuvas, kuri:
 
