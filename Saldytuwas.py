@@ -32,8 +32,12 @@ def produkto_isemimas(saldytuvas):
 def funkcija_04():
     pass
 
-def funkcija_05():
-    pass
+def ieskoti_produkto(saldytuvas):
+    paieska = input("Įveskite norima rasti produkta: ")
+    if paieska in saldytuvas:
+        print(paieska, saldytuvas[paieska])
+    else:
+        print(" Tokio produkto šaldytuve nėra ")
 
 def funkcija_06():
     pass
@@ -59,8 +63,4 @@ while True:
         print(f'"Šaldytuve yra šių produktų: {saldytuvas}"')
         print(f'Kūnas šaukia, trūksta Vita-mi-NŲŲ!')
     elif tekstas == '5':
-        paieska = input("Įveskite norima rasti produkta: ")
-        if paieska in saldytuvas:
-            print(paieska, saldytuvas[paieska])
-        else:
-            print(" Tokio produkto šaldytuve nėra ")
+       print(ieskoti_produkto(saldytuvas))
