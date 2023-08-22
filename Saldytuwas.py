@@ -12,8 +12,8 @@ saldytuvas = {}
 def prideti_produkta(saldytuvas):
     pavadinimas = input("Iveskite produkto pavadinima: ")
     kiekis = float(input("Iveskite produkto kieki: "))
-    saldytuvas[pavadinimas] += kiekis
-    print(saldytuvas)
+    saldytuvas[pavadinimas] = kiekis
+    print(f"{saldytuvas[pavadinimas]}")
 
 def produkto_papildymas(saldytuvas):
     pavadinimas = input("pasirinkite produkta: ")
