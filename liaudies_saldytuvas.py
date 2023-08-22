@@ -1,5 +1,5 @@
 import time
-from IPython.display import clear_output
+#from IPython.display import clear_output
 
 def intro(intro_saldytuwas, delay=0.09):
     for raidės in intro_saldytuwas:
@@ -201,7 +201,7 @@ while True:
         time.sleep(4)
         print(f"\n\033[91m>Ištrauk Lizdą Kitakart Veikiau Jau!")
         time.sleep(0.85)
-        istrinimas = clear_output(wait=False)
+        #istrinimas = clear_output(wait=False)
         break
     elif tekstas == '3':
         print(prideti_produkta(saldytuvas))
