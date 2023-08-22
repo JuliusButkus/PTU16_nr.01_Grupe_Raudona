@@ -15,8 +15,16 @@ def funkcija_01():
 def funkcija_02():
     pass
 
-def funkcija_03():
-    pass
+def produkto_isemimas(saldytuvas):
+    produktas = input("Iveskite koki produkta norite pasalinti: ")
+    kiekis = float(input('Iveskite koki kieki produkto norite pasalinti: '))
+    if produktas in saldytuvas:
+            saldytuvas[produktas] -= kiekis
+            if saldytuvas[produktas] <= 0:
+                del saldytuvas[produktas]
+                print(f'Pasalintas {produktas}')
+            else:
+                print(f'{produktas} saldytuve yra: {saldytuvas[produktas]}')
 
 def funkcija_04():
     pass
@@ -43,16 +51,8 @@ while True:
         if keisti_produkta in saldytuvas:
             saldytuvas[produktas] += prideti_kieki
             print(f'{saldytuvas[keisti_produkta]}')
-    elif tekstas == '3':
-        produktas = input("Iveskite koki produkta norite pasalinti: ")
-        kiekis = int(input('Iveskite koki kieki produkto norite pasalinti: '))
-        
-        if produktas in saldytuvas:
-            saldytuvas[produktas] -= kiekis
-            if saldytuvas[produktas] <= 0:
-                print(f'Nepakankamas {produktas} kiekis')
-            else:
-                print(f'{produktas} saldytuve yra: {saldytuvas[produktas]}')
+    elif tekstas == '3':        
+        produkto_isemimas(saldytuvas)
     elif tekstas == '4':
         produktu_perziura = saldytuvas.items()
         print(f'"Šaldytuve yra šių produktų: {saldytuvas}"')
