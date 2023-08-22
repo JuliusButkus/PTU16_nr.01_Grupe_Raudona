@@ -12,12 +12,12 @@ saldytuvas = {}
 def funkcija_01():
     pass
 
-def produkto_paildymas(saldytuvas):
+def produkto_papildymas(saldytuvas):
     pridedamas_produktas = input("pasirinkite produkta: ")
     prideti_kieki = float(input("pasirinkite kieki: "))
     if pridedamas_produktas in saldytuvas:
         saldytuvas[produktas] += prideti_kieki
-        return print(f'{saldytuvas[pridedamas_produktas]}')
+        print(f'{saldytuvas[pridedamas_produktas]}')
 
 def funkcija_03():
     pass
