@@ -8,6 +8,16 @@ meniukas = '''
 0 - išėjimas
 '''
 saldytuvas = {}
+receptukai = {
+    'Kiausiniene':{  
+        'Kiausinis': 2,
+        'Pienas': 0.5,
+        'Desra':1},
+    'Salotos':{
+        'Agurkas': 2,
+        'Pomidorai': 2,
+        'Grietine': 0.5}
+          }
 
 def prideti_produkta(saldytuvas):
     pavadinimas = input("Iveskite produkto pavadinima: ")
@@ -43,8 +53,20 @@ def ieskoti_produkto(saldytuvas):
     else:
         print(" Tokio produkto šaldytuve nėra ")
 
-def funkcija_06():
-    pass
+def receptas(saldytuvas, receptukai):
+    pasirinktas_receptas = input("pasirinkte receptas")
+    if pasirinktas_receptas in receptukai:
+        rasti_produktai = {}
+        for produktas, kiekis in receptukai[pasirinktas_receptas].items():
+            if produktas in saldytuvas:
+                rasti_produktai[produktas] = saldytuvas[produktas] - kiekis
+            else:
+                rasti_produktai[produktas] = -kiekis
+        for produktas, kiekis in rasti_produktai.items():
+            if kiekis >= 0:
+                print(f'{produktas} užtenka')
+            else:
+                print(f'{produktas} neužtenka {abs(kiekis)}')
 
 while True:
     print(meniukas)
@@ -63,4 +85,8 @@ while True:
         print(f'"Šaldytuve yra šių produktų: {saldytuvas}"')
         print(f'Kūnas šaukia, trūksta Vita-mi-NŲŲ!')
     elif tekstas == '5':
-       print(ieskoti_produkto(saldytuvas))
+        print(ieskoti_produkto(saldytuvas))
+    elif tekstas == '6':
+        print(receptas(saldytuvas, receptukai))
+    
+    
