@@ -1,4 +1,4 @@
-#ŠALDYTUVAS
+#FUNKCINIS ŠALDYTUVAS
 meniukas = '''
 1 - pridėti naują produktą
 2 - papildyti produkto kiekį
@@ -8,6 +8,24 @@ meniukas = '''
 0 - išėjimas
 '''
 saldytuvas = {}
+
+def funkcija_01():
+    pass
+
+def funkcija_02():
+    pass
+
+def funkcija_03():
+    pass
+
+def funkcija_04():
+    pass
+
+def funkcija_05():
+    pass
+
+def funkcija_06():
+    pass
 
 while True:
     print(meniukas)
