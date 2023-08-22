@@ -9,18 +9,29 @@ meniukas = '''
 '''
 saldytuvas = {}
 
-def funkcija_01():
-    pass
+def prideti_produkta(saldytuvas):
+    pavadinimas = input("Iveskite produkto pavadinima: ")
+    kiekis = float(input("Iveskite produkto kieki: "))
+    saldytuvas[pavadinimas] += kiekis
+    print(saldytuvas)
 
 def produkto_papildymas(saldytuvas):
-    pridedamas_produktas = input("pasirinkite produkta: ")
+    pavadinimas = input("pasirinkite produkta: ")
     prideti_kieki = float(input("pasirinkite kieki: "))
-    if pridedamas_produktas in saldytuvas:
-        saldytuvas[produktas] += prideti_kieki
-        print(f'{saldytuvas[pridedamas_produktas]}')
+    if pavadinimas in saldytuvas:
+        saldytuvas[pavadinimas] += prideti_kieki
+        print(f'{saldytuvas[pavadinimas]}')
 
-def funkcija_03():
-    pass
+def produkto_isemimas(saldytuvas):
+    produktas = input("Iveskite koki produkta norite pasalinti: ")
+    kiekis = float(input('Iveskite koki kieki produkto norite pasalinti: '))
+    if produktas in saldytuvas:
+            saldytuvas[produktas] -= kiekis
+            if saldytuvas[produktas] <= 0:
+                del saldytuvas[produktas]
+                print(f'Pasalintas {produktas}')
+            else:
+                print(f'{produktas} saldytuve yra: {saldytuvas[produktas]}')
 
 def funkcija_04():
     pass
@@ -38,21 +49,11 @@ while True:
     if tekstas == '0':
         break
     elif tekstas == '1':
-        produktas = input("Pridekite produkta: ")
-        produkto_kiekis = int(input("Pridekite produkto kieki: "))
-        saldytuvas[produktas] = produkto_kiekis
+        print(prideti_produkta(saldytuvas))
     elif tekstas == '2':
         print(produkto_papildymas(saldytuvas))
-    elif tekstas == '3':
-        produktas = input("Iveskite koki produkta norite pasalinti: ")
-        kiekis = int(input('Iveskite koki kieki produkto norite pasalinti: '))
-        
-        if produktas in saldytuvas:
-            saldytuvas[produktas] -= kiekis
-            if saldytuvas[produktas] <= 0:
-                print(f'Nepakankamas {produktas} kiekis')
-            else:
-                print(f'{produktas} saldytuve yra: {saldytuvas[produktas]}')
+    elif tekstas == '3':        
+        produkto_isemimas(saldytuvas)
     elif tekstas == '4':
         produktu_perziura = saldytuvas.items()
         print(f'"Šaldytuve yra šių produktų: {saldytuvas}"')
