@@ -115,32 +115,33 @@ def produkto_isemimas(saldytuvas):
     produktas = input("Įveskite Produktą, kurį Norite Pašalinti: ")
     kiekis = float(input('Įveskite Produkto Kiekį, Kurį Norite Pašalinti: '))
     if produktas in saldytuvas:
-            saldytuvas[produktas] -= kiekis
-            if saldytuvas[produktas] <= 0:
-                del saldytuvas[produktas]
-                print(f'Pašalinta(s) {produktas}')
-            else:
-                print(f'{produktas} Šaldytuve yra: {saldytuvas[produktas]}')
+        saldytuvas[produktas] -= kiekis
+        if saldytuvas[produktas] <= 0:
+            del saldytuvas[produktas]
+            print(f'Pašalinta(s) {produktas}')
+        else:
+            print(f'{produktas} Šaldytuve yra: {saldytuvas[produktas]}')
     return saldytuvas
 
 def produkto_ispilimas(saldytuvas):
     produktas = input("Įveskite Produktą, Kurį Norite Išpilti: ")
     kiekis = float(input('Įveskite Produkto Kiekį Išpilčiai: '))
     if produktas in saldytuvas:
-            saldytuvas[produktas] -= kiekis
-            if saldytuvas[produktas] <= 0:
-                del saldytuvas[produktas]
-                print(f'Išpiltas {produktas}')
-                time.sleep(2)
-                print(f'Nu jo.. Žodžiu.')
-            else:
-                time.sleep(1.5)
-                print(f'{produktas} Šaldytuve Yra: {saldytuvas[produktas]}')
+        saldytuvas[produktas] -= kiekis
+        if saldytuvas[produktas] <= 0:
+            del saldytuvas[produktas]
+            print(f'Išpiltas {produktas}')
+            time.sleep(2)
+            print(f'Nu jo.. Žodžiu.')
+        else:
+            time.sleep(1.5)
+            print(f'{produktas} Šaldytuve Yra: {saldytuvas[produktas]}')
     return saldytuvas
 
 def produktu_turinys():
     print(f'\033[92m1. Šaldytuvo Turinys: ')
-    [print(key,':',value) for key, value in saldytuvas.items()]
+    for key, value in saldytuvas.items():
+        print(key,':',value) 
     #produktu_perziura = saldytuvas.items()
     #print(f'"Šaldytuve Yra Šių Produktų: {saldytuvas}"')
 
@@ -182,19 +183,19 @@ while True:
         #istrinimas = clear_output(wait=False)
         break
     elif tekstas == '3':
-        print(prideti_produkta(saldytuvas))
+        saldytuvas = prideti_produkta(saldytuvas)
     elif tekstas == '5':
-        print(produkto_papildymas(saldytuvas))
+        saldytuvas = produkto_papildymas(saldytuvas)
     elif tekstas == '4':        
-        produkto_isemimas(saldytuvas)
+        saldytuvas = produkto_isemimas(saldytuvas)
     elif tekstas == '1':
-        produktu_turinys()
+        print(produktu_turinys())
     elif tekstas == '6':
         print(receptas(saldytuvas, receptukai))
     elif tekstas == '2':
         print(ieskoti_produkto(saldytuvas))
     elif tekstas == '7':
-        print(produkto_ispilimas(saldytuvas))    
+        saldytuvas = produkto_ispilimas(saldytuvas)    
     elif tekstas == '8':
         #print(saldytuvo_aprasas(saldytuwo_aprasas, delay=0.08)) Neveikia kažkodie
         pass
