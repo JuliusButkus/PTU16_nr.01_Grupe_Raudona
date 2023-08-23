@@ -1,9 +1,7 @@
 import time
 #from IPython.display import clear_output
 
-# čia bootinimas šaldytuvo
-
-def intro(intro_saldytuwas, delay=0.03):
+def intro(intro_saldytuwas, delay=0.001):
     for raidės in intro_saldytuwas:
         print(raidės, end='', flush=True)
         time.sleep(delay)
@@ -31,7 +29,7 @@ meniukas = '''
 time.sleep(1.5)
 intro(f"\n\033[92mPARINKTYS")
 print(meniukas)
-# Šaldytuvo Aprašas - 8 funkcija
+
 sald_apras = {
     'SNAIGĖ-317': {
         'Gamybos data': '1984',
@@ -46,81 +44,50 @@ sald_apras = {
         'Termobranduolinė apsauga?': 'Yra, Nes nu Liaudies Priešai-Kapitalistai Užbombins.. Nu.',
     }
 }
-#intro(f'\n\033[92m{sald_apras}')
+intro(f'\n\033[92m{sald_apras}')
 #intro([print(key,':',value) for key, value in sald_apras.items()])
-# Apačioj Šaldytuvo Turinys - 1 funckija
 
 saldytuvas = {
-    '1. Lašiniai': {
-        'Kiekis': 10,
-    },
-    '2. Sviestas': {
-        'Kiekis': 5,
-    },
-    '3. Pienas': {
-        'Kiekis': 5.0,
-        'Būsena': 'Šviežias',
-    },
-    '4. Rūgpienis': {
-        'Kiekis': 4.3,
-        'Būsena': 'Supelijęs',
-    },
-    '5. Grietinė': {
-        'Kiekis': 11.3,
-    },
-    '6. Daktariška Dešra': {
-        'Kiekis': 0.8,
-        'Būsena': 'Dar Gera, Tarkim',
-    },
-    '7. Bulvės': {
-        'Kiekis': 10,
-        'Būsena': 'Nuskustos',
-    },
-    '8. Burokėliai': {
-        'Kiekis': 35,
-    },
-    '9. Žigulinis Alus': {
-        'Kiekis': 5.5,
-    },
-    '10. Degtinė': {
-        'Kiekis': 3.5,
-    },
-    '11. Dujokaukė': {
-        'Kiekis': 1,
-        'Modelis': 'GP-5',
-        'Būsena': 'Paruošta; Su Abestiniu Filtru',
-    }
+    'Lašiniai': 10,
+    'Sviestas': 5,
+    'Pienas': 5.0, 
+    'Rūgpienis': 4.3,
+    'Grietinė': 11.3,
+    'Daktariška Dešra': 0.8,
+    'Bulvės': 10,
+    'Burokėliai': 35,
+    'Žigulinis Alus': 5.5,
+    'Degtinė': 3.5,
+    'Dujokaukė': 1
 }
-# Čia tipo „Gastro Patirtys“ - 6 funkcija
 receptukai = {
-    '1. Kiaušinienė':{  
+    'Kiaušinienė':{  
         'Kiaušiniai': 2,
         'Pienas': 0.5,
         'Dešra':1},
-    '2. Salotos':{
+    'Salotos':{
         'Agurkai': 2,
         'Pomidorai': 2,
         'Grietinė': 0.5,
         'Svogūnai': 1,
         'Lašiniai': 1.5},
-    '3. Plombyras':{
+    'Plombyras':{
         'Pienas': 1,
         'Cukrus': 0.5,
         'Grietinė': 1,
         'Sviestas': 0.5},
-    '4. Barščiai':{
+    'Barščiai':{
         'Burokėliai': 3,
         'Grietinė': 0.2,
         'Žigulinis Alus': 0.5,
         'Dešra': 0.1,
         'Lašiniai': 2,
         'Bulvės': 4},
-    '5. Кончининская':{
+    'Кончининская':{
         'Žigulinis Alus': 0.15,
         'Degtinė': 0.3,
         'Agurkai': 0.5}    
 }
-#Užkomentuotas Šaldytuvo Aprašas, Nes Neveikia
 '''
 def saldytuvo_aprasas(saldytuwo_aprasas, delay=0.08):
     for raidės in saldytuwo_aprasas:
@@ -129,12 +96,12 @@ def saldytuvo_aprasas(saldytuwo_aprasas, delay=0.08):
 #saldytuvo_aprasas(f"\n\033[92m APRAŠAS \n{sald_apras}")
 saldytuvo_aprasas([print(key,':',value) for key, value in sald_apras.items()])
 '''
-
 def prideti_produkta(saldytuvas):
     pavadinimas = input("Iveskite produkto pavadinima: ")
     kiekis = float(input("Iveskite produkto kieki: "))
     saldytuvas[pavadinimas] = kiekis
     print(f"{saldytuvas[pavadinimas]}")
+    return saldytuvas
 
 def produkto_papildymas(saldytuvas):
     pavadinimas = input("pasirinkite produkta: ")
@@ -142,6 +109,7 @@ def produkto_papildymas(saldytuvas):
     if pavadinimas in saldytuvas:
         saldytuvas[pavadinimas] += prideti_kieki
         print(f'{saldytuvas[pavadinimas]}')
+    return saldytuvas
 
 def produkto_isemimas(saldytuvas):
     produktas = input("Įveskite Produktą, kurį Norite Pašalinti: ")
@@ -153,6 +121,8 @@ def produkto_isemimas(saldytuvas):
                 print(f'Pašalinta(s) {produktas}')
             else:
                 print(f'{produktas} Šaldytuve yra: {saldytuvas[produktas]}')
+    return saldytuvas
+
 def produkto_ispilimas(saldytuvas):
     produktas = input("Įveskite Produktą, Kurį Norite Išpilti: ")
     kiekis = float(input('Įveskite Produkto Kiekį Išpilčiai: '))
@@ -166,6 +136,7 @@ def produkto_ispilimas(saldytuvas):
             else:
                 time.sleep(1.5)
                 print(f'{produktas} Šaldytuve Yra: {saldytuvas[produktas]}')
+    return saldytuvas
 
 def produktu_turinys():
     print(f'\033[92m1. Šaldytuvo Turinys: ')
@@ -197,7 +168,8 @@ def receptas(saldytuvas, receptukai):
                 print(f'{produktas} užtenka')
             else:
                 print(f'{produktas} neužtenka {abs(kiekis)}')
-#Pabaiga Kodų Su funkcijomis
+    return pasirinktas_receptas
+
 while True:
     #print(meniukas)
     tekstas = input('Išsirinkite Parinktį!: ')
