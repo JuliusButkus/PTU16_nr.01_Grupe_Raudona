@@ -1,6 +1,8 @@
 import time
 #from IPython.display import clear_output
 
+# čia bootinimas šaldytuvo
+
 def intro(intro_saldytuwas, delay=0.03):
     for raidės in intro_saldytuwas:
         print(raidės, end='', flush=True)
@@ -29,7 +31,7 @@ meniukas = '''
 time.sleep(1.5)
 intro(f"\n\033[92mPARINKTYS")
 print(meniukas)
-
+# Šaldytuvo Aprašas - 8 funkcija
 sald_apras = {
     'SNAIGĖ-317': {
         'Gamybos data': '1984',
@@ -46,6 +48,7 @@ sald_apras = {
 }
 #intro(f'\n\033[92m{sald_apras}')
 #intro([print(key,':',value) for key, value in sald_apras.items()])
+# Apačioj Šaldytuvo Turinys - 1 funckija
 
 saldytuvas = {
     '1. Lašiniai': {
@@ -88,7 +91,7 @@ saldytuvas = {
         'Būsena': 'Paruošta; Su Abestiniu Filtru',
     }
 }
-
+# Čia tipo „Gastro Patirtys“ - 6 funkcija
 receptukai = {
     '1. Kiaušinienė':{  
         'Kiaušiniai': 2,
@@ -117,6 +120,7 @@ receptukai = {
         'Degtinė': 0.3,
         'Agurkai': 0.5}    
 }
+#Užkomentuotas Šaldytuvo Aprašas, Nes Neveikia
 '''
 def saldytuvo_aprasas(saldytuwo_aprasas, delay=0.08):
     for raidės in saldytuwo_aprasas:
@@ -193,7 +197,7 @@ def receptas(saldytuvas, receptukai):
                 print(f'{produktas} užtenka')
             else:
                 print(f'{produktas} neužtenka {abs(kiekis)}')
-
+#Pabaiga Kodų Su funkcijomis
 while True:
     #print(meniukas)
     tekstas = input('Išsirinkite Parinktį!: ')
