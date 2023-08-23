@@ -44,7 +44,7 @@ sald_apras = {
         'Termobranduolinė apsauga?': 'Yra, Nes nu Liaudies Priešai-Kapitalistai Užbombins.. Nu.',
     }
 }
-intro(f'\n\033[92m{sald_apras}')
+#intro(f'\n\033[92m{sald_apras}')
 #intro([print(key,':',value) for key, value in sald_apras.items()])
 
 saldytuvas = {
