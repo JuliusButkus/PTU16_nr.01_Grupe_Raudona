@@ -1,7 +1,7 @@
 import time
 #from IPython.display import clear_output
 
-def intro(intro_saldytuwas, delay=0.09):
+def intro(intro_saldytuwas, delay=0.03):
     for raidės in intro_saldytuwas:
         print(raidės, end='', flush=True)
         time.sleep(delay)
@@ -88,6 +88,7 @@ saldytuvas = {
         'Būsena': 'Paruošta; Su Abestiniu Filtru',
     }
 }
+
 receptukai = {
     '1. Kiaušinienė':{  
         'Kiaušiniai': 2,
@@ -124,6 +125,7 @@ def saldytuvo_aprasas(saldytuwo_aprasas, delay=0.08):
 #saldytuvo_aprasas(f"\n\033[92m APRAŠAS \n{sald_apras}")
 saldytuvo_aprasas([print(key,':',value) for key, value in sald_apras.items()])
 '''
+
 def prideti_produkta(saldytuvas):
     pavadinimas = input("Iveskite produkto pavadinima: ")
     kiekis = float(input("Iveskite produkto kieki: "))
@@ -178,7 +180,7 @@ def receptas(saldytuvas, receptukai):
     print(f"\033[92m„Gastro Patirtys“: ")
     time.sleep(0.5)
     print(f'\n\033[92m{receptukai}')
-    pasirinktas_receptas = input("Pasirinkte „Gastro“ Receptą")
+    pasirinktas_receptas = input("Pasirinkte „Gastro“ Receptą: ")
     if pasirinktas_receptas in receptukai:
         rasti_produktai = {}
         for produktas, kiekis in receptukai[pasirinktas_receptas].items():
