@@ -45,7 +45,6 @@ class Saldytuvas:
             'Agurkai': 0.5}    
     }
 
-
     def prideti_produkta(self):
         produktas = input("Iveskite produkto pavadinima: ")
         kiekis = float(input("Iveskite produkto kieki: "))
