@@ -46,8 +46,8 @@ class Saldytuvas:
     }
 
 
-    def add(self, produktas):
-        pass # Daro Povilas
+    def add(self):
+        pass
 
     def papildyti(self):
         produktas = input("pasirinkite produkta: ")
@@ -59,8 +59,22 @@ class Saldytuvas:
             self.saldytuvas[produktas] == kiekis
             print(f'{self.saldytuvas[produktas]}')
 
-    def isumti_kieki(self, produktas):
-        pass #daro Lukas
+    def isimti_kieki(self): 
+        produktas = input("Įveskite Produktą, kurį Norite Pašalinti: ")
+        kiekis =float(input('Įveskite Produkto Kiekį, Kurį Norite Pašalinti: '))
+        if produktas in self.saldytuvas:
+            if self.saldytuvas[produktas] >= kiekis:
+                self.saldytuvas[produktas] -= kiekis
+                if self.saldytuvas[produktas] <= 0:
+                    del self.saldytuvas[produktas]
+                    print(f'Pašalinta(s) {produktas}')
+                else:
+                    print(f'{produktas} Šaldytuve yra: {self.saldytuvas[produktas]}')
+            else:
+                print(f"Neuztenka {produktas} saldytuve")
+        else:
+            print(f"{produktas} nera saldytuve")
+        return self.saldytuvas
 
     def turinys(self, produktas):
         pass # Daro Vytautas
@@ -225,9 +239,9 @@ while True:
     elif tekstas == '2':
         print(ieskoti_produkto(saldytuvas))
     elif tekstas == '3':
-        saldytuvas = prideti_produkta(saldytuvas)
+        saldytuvas.add()
     elif tekstas == '4':        
-        saldytuvas = produkto_isemimas(saldytuvas)
+        saldytuvas.isimti_kieki()
     elif tekstas == '5':
         saldytuvas.papildyti()
     elif tekstas == '6':
