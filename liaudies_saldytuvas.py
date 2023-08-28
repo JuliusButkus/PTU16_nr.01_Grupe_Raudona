@@ -46,8 +46,11 @@ class Saldytuvas:
     }
 
 
-    def add(self, produktas):
-        pass # Daro Povilas
+    def prideti_produkta(self):
+        produktas = input("Iveskite produkto pavadinima: ")
+        kiekis = float(input("Iveskite produkto kieki: "))
+        self.saldytuvas[produktas] = kiekis
+        print(f"{produktas}: {self.saldytuvas[produktas]}")
 
     def papildyti(self):
         produktas = input("pasirinkite produkta: ")
@@ -225,7 +228,7 @@ while True:
     elif tekstas == '2':
         print(ieskoti_produkto(saldytuvas))
     elif tekstas == '3':
-        saldytuvas = prideti_produkta(saldytuvas)
+        saldytuvas.prideti_produkta()
     elif tekstas == '4':        
         saldytuvas = produkto_isemimas(saldytuvas)
     elif tekstas == '5':
