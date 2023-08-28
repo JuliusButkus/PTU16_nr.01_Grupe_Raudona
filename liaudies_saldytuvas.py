@@ -81,8 +81,13 @@ class Saldytuvas:
     def turinys(self, produktas):
         pass # Daro Vytautas
 
-    def isskoti_produkto(self, produktas):
-        pass #Dainius
+    def ieskoti_produkto(self):
+        produktas = input("Iveskite kokio produkto ieškote? ")
+        if produktas in self.saldytuvas:
+            kiekis = self.saldytuvas[produktas]
+            print(f"Produktas: {produktas} šaldytuve yra, kiekis: {kiekis}")
+        else:
+            print("Tokio produkto šaldytuve nėra")
 
     def receptas(self,):
         pass #kas pirmesnis tas gudresnis (prasinesti jeigu padare)
@@ -239,7 +244,7 @@ while True:
     elif tekstas == '1':
         print(produktu_turinys())
     elif tekstas == '2':
-        print(ieskoti_produkto(saldytuvas))
+        saldytuvas.ieskoti_produkto()
     elif tekstas == '3':
         saldytuvas.prideti_produkta()
     elif tekstas == '4':        
