@@ -161,6 +161,7 @@ sald_apras = {
         'Spalva': 'Pilkšva',
         'Galia': '2.8 kW',
         'Svoris': '1860 kg',
+        'Talpa': '1024L; Vieno Gigalitro',
         'Triukšmo lygis': '67 dB',
         'Ar Spyna Yra?': 'Taip, Nes Viskas Išbildėtų',
         'Pagaminta iš': 'Švino; Volframo; Grafito; Bakelito etc...',
@@ -173,7 +174,7 @@ intro(f'\n\033[92m{sald_apras}')
 saldytuvas = Saldytuvas()
 receptas = Receptų_knyga()
 while True:
-    tekstas = input('Išsirinkite Parinktį!: ')
+    tekstas = input(f"\n\033 Išsirinkite Parinktį!: ")
     if tekstas == '0':
         print(f"\033[92m>>>>>>>Я ОТКЛЮЧАЮСЬ!<<<<<<<<")
         time.sleep(4)
